@@ -1,24 +1,41 @@
 <template>
-    <div>
+    <div class="maindiv">
         <div class="myroutetxt">My Route</div>
-        <div class="leveltxt">Level 1</div>
-        <div class="exploretxt">It's a big world out there, Go explore</div>
-        <div>
-            <div><img src={cpImg1}></div>
-            <div>
-                <div>Professionalism Course</div>
-                <div>
-                    <div>(Location)</div>
-                    <div>MV Clouds</div>
-                    <div><img src={cpImg4></div>
-                    <div>(Destination)</div>
-                    <div>Salesforce</div>
-                </div>
+        <div class="leveltxt slds-m-top_medium">Level 1</div>
+        <div class="exploretxt slds-m-top_medium">It's a big world out there, Go explore</div>
+        <div class="profdiv slds-m-top_xx-large slds-grid slds-wrap">
+            <div class="cpimgdiv slds-size_2-of-5">
+                <img class="cpimg1" src={cpImg1}>
+            </div>
+            <div class="sidediv slds-size_3-of-5">
+                <p class="profCoursetxt">Professionalism Course</p>
+                <span class="locationdiv">
+                    <div>
+                        <p>(Location)</p>
+                        <div class="brd1"></div>
+                        <p>MV Clouds</p>
+                    </div>
+                    <div><img src={cpImg4}></div>
+                    <div>
+                        <p>(Destination)</p>
+                        <div class="brd2"></div>
+                        <p>Salesforce</p>
+                    </div>
+                </span>
             </div>    
         </div>
-        <div>
-            <div><img src={cpImg2}></div>
-            <div><img src={cpImg3}></div>
+        <div class="mapimg"><img class="mapimgdiv" src={cpImg5} usemap="#Map"></div>
+        <map name="Map" id="Map">
+            <area shape="circle" class="level 1" coords="441,637,25" alt="Circle" href="" onclick={level1method}>            
+            <area shape="circle" class="level 2" coords="472,275,1" alt="Circle" href="" onclick={level2method}>
+            <area shape="circle" class="level 3" coords="668,216,2" alt="Circle" href="" onclick={level3method}>
+            <area shape="circle" class="level 4" coords="1008,419,1" alt="Circle" href="" onclick={level4method}>
+            <area shape="circle" class="level 5" coords="1189,338,1" alt="Circle" href="" onclick={level5method}>
+            <area shape="circle" class="level 6" coords="985,100,3" alt="Circle" href="" onclick={level6method}>   
+        </map>
+        <div class="footerdiv">
+            <div class="cpimgmndiv"><img class="cpimgdiv2" src={cpImg2}></div>
+            <div class="cpimg3div"><img src={cpImg3}></div>
         </div>
     </div>
 </template>
