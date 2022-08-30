@@ -1,4 +1,6 @@
-<!-- https://CS6.salesforce.com -->
+<!-- 
+https://CS6.salesforce.com
+-->
 <apex:page sidebar="true" showHeader="true">
     <apex:includeLightning />
     <!--Lightning Container-->
@@ -6,12 +8,12 @@
       
     <script type="text/javascript">
     //get contact Id from URL
-    var contactId = "{!$CurrentPage.parameters.id}";
+    // var contactId = "{!$CurrentPage.parameters.id}";
       
     //Create Lightning Component
     $Lightning.use("c:mtp_LeavePageApp", function() {
         $Lightning.createComponent("c:mtp_Leave_Page", 
-                                   { "recordId" : contactId }, //Pass Parameter
+                                   { /* "recordId" : contactId */ }, //Pass Parameter
                                    "LightningContainer", function(component) {
                                        console.log('Component created Successfully');
                                    });

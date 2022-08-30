@@ -1,6 +1,8 @@
 import { LightningElement } from 'lwc';
 import { loadScript, loadStyle } from 'lightning/platformResourceLoader';
 import jQuery from '@salesforce/resourceUrl/jQuery';
+import rwdImageMapJs from '@salesforce/resourceUrl/rwdImageMapJs';
+import rwdImageMapMinjs from '@salesforce/resourceUrl/rwdImageMapMinjs';
 import mtpCoursePage1Img1 from '@salesforce/resourceUrl/mtp_CoursePage1_Img1';
 import mtpCoursePage1Img2 from '@salesforce/resourceUrl/mtp_CoursePage1_Img2';
 import mtpCoursePage1Img3 from '@salesforce/resourceUrl/mtp_CoursePage1_Img3';
@@ -13,7 +15,11 @@ import mtpCoursePage1bg from '@salesforce/resourceUrl/mtp_CoursePage1_bg';
 export default class Mtp_CoursePage1 extends LightningElement {
 
     renderedCallback(){
-        loadScript(this, jQuery)
+        Promise.all([
+            loadScript(this,jQuery ),
+            loadScript(this, rwdImageMapJs),
+            loadScript(this,rwdImageMapMinjs),        
+        ])
         .then(() => {
             console.log('JQuery loaded.');
         })
